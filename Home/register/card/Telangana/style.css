@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('MuchaTseBle\ \(1\).jpg') no-repeat center center fixed; /* Add background image for body */
+    background-size: cover; /* Ensure the background image covers the whole body */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(back3.jpeg); /* Darker color for the header */
+    padding: 1rem;
+    background-size:cover ;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ccc; /* Light grey color on hover */
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.search-bar {
+    margin: 1rem 0;
+}
+
+#sub-dropdown-container, #tutor-cards-container {
+    margin-top: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    display: inline-block;
+    background-color: #fff; /* White background color for cards */
+    text-align: left;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 250px; /* Fixed width for cards */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.dropdown {
+    margin-top: 1rem;
+}
+
+#custom-time, #enter-button, #request-button {
+    display: none;
+    margin-top: 1rem;
+}
+
+#enter-button {
+    text-align: center;
+}
+
+#request-button {
+    display: block;
+    margin: 1rem auto;
+}
+h1{
+    color: white;
+}

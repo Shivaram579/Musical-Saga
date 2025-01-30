@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+   
+
+
+
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .container {
+            padding: 30px 10%;
+            text-align: center;
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-heading {
+            font-family: cursive;
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .heading {
+            font-size: 22px;
+            position: absolute;
+            top: 70px;
+            left: 25px;
+            color: black;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .heading .highlight {
+            color: #07b2c8;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        #search-box {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #007bff; /* Search box border color */
+            padding: 12px 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        #search-box:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 91, 187, 0.2);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+        }
+
+        .image {
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            width: 300px;
+            border-radius: 10px;
+            animation: fadeIn 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.5) translate(-10px);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) translate(0);
+                opacity: 1;
+            }
+        }
+
+        .image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .image h3 {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            #search-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                padding: 25px 20px;
+            }
+            .image {
+                width: 100%;
+            }
+        }
+
+        #back-button {
+            display: none; /* Initially hidden */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+     <div class="container">
+        <h1 id="main-heading">Explore your Nearby Shops</h1>
+        <h2 class="heading">City:<br>Charlapally</h2>
+        <input type="text" placeholder="Enter Shop Name:" id="search-box">
+      
+        <div class="image-container" id="image-container">
+              
+              <div class="image" data-title="Percussion Palace-shop1">
+                  <img src="jubilee-hills shops images/shop1.jpeg" alt="Shop1">
+                  <h3>Percussion Palace</h3>
+               </div>
+               <div class="image" data-title="Drumbeat Den-shop2">
+                   <img src="jubilee-hills shops images/shop2.webp" alt="Shop2">
+                   <h3>Drumbeat Den Shop2</h3>
+               </div>
+               <div class="image" data-title="Thunder Sticks-shop3">
+                  <img src="jubilee-hills shops images/shop3.jpeg" alt="Shop3">
+                   <h3>Thunder Sticks Shop</h3>
+              </div>
+              <div class="image" data-title="Drum Zone-shop4">
+                  <img src="jubilee-hills shops images/shop4.webp" alt="Shop4">
+                  <h3>Drum Zone Shop</h3>
+               </div>
+               <div class="image" data-title="Beat Haven-shop5">
+                   <img src="jubilee-hills shops images/shop5.jpeg" alt="Shop5">
+                   <h3>Beat Haven Shop</h3>
+               </div>
+               <div class="image" data-title="Groove Central-shop6">
+                  <img src="jubilee-hills shops images/shop6.jpg" alt="Shop6">
+                  <h3>Groove Central Shop</h3>
+               </div>
+               <div class="image" data-title="Drum Emporium-shop7">
+                  <img src="jubilee-hills shops images/shop7.jpg" alt="Shop7">
+                  <h3>Drum Emporium Shop</h3>
+               </div>
+              <div class="image" data-title="Beat Street-shop8">
+                  <img src="jubilee-hills shops images/shop8.jpg" alt="Shop8">
+                  <h3>Beat Street Shop</h3>
+              </div>
+             
+            
+         
+           
+            
+            
+         </div>
+    </div>
+    
+
+    
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const searchBox = document.querySelector('#search-box');
+    const images = document.querySelectorAll('.container .image-container .image');
+    
+    searchBox.placeholder = 'Enter Shop Name';
+
+    searchBox.oninput = () => {
+        const value = searchBox.value.toLowerCase();
+        images.forEach(image => {
+            
+            const title = image.getAttribute('data-title').toLowerCase();
+            if (title.includes(value)) {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        });
+        if (searchBox.value === '') {
+            images.forEach(image => image.style.display = 'block');
+        }
+    };
+
+    images.forEach(image => {
+        image.onclick = () => {
+            const title = image.getAttribute('data-title').toLowerCase().replace(/ /g, '');
+            window.location.href = `${title}/${title}.html`;
+        };
+    });
+});
+
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+   
+
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .container {
+            padding: 30px 10%;
+            text-align: center;
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-heading {
+            font-family: cursive;
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .heading {
+            font-size: 22px;
+            position: absolute;
+            top: 70px;
+            left: 25px;
+            color: black;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .heading .highlight {
+            color: #07b2c8;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        #search-box {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #007bff; /* Search box border color */
+            padding: 12px 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        #search-box:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 91, 187, 0.2);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+        }
+
+        .image {
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            width: 300px;
+            border-radius: 10px;
+            animation: fadeIn 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.5) translate(-10px);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) translate(0);
+                opacity: 1;
+            }
+        }
+
+        .image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .image h3 {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            #search-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                padding: 25px 20px;
+            }
+            .image {
+                width: 100%;
+            }
+        }
+
+        #back-button {
+            display: none; /* Initially hidden */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        
+        <h2 class="main-heading">Shop:  </h2>
+        <h3>Address:</h3>
+         <a href=" "><address>Villa 49, Rd Number 2, Banjara Hills, Hyderabad, Telangana 500034 </address></a>
+         <h3>Timings: 	
+            10 am–8:30 pm
+            
+            <br>Phone:07799511635 </h3>
+        <h2 id="heading">Explore Instruments</h2>
+        <input type="text" placeholder="Enter Instrument Name:" id="search-box">
+        
+        <h2>Available for first-hand purchase</h2>
+
+        <div class="image-container" id="image-container">
+            <div class="image" data-title="Bergerault Xylophone">
+                <img src="im/Bergerault Xylophone.jpg" alt="Claves">
+                <h3>
+                    Bergerault Xylophone
+                <br>Model Name: Meinl CL1RW
+                <br>Price: $9
+                <br>Material: Hardwood
+                <br>Dimensions: 8" length
+                <br>Brand: Meinl
+                <h3>
+            </div>
+            <div class="image" data-title="Cajón">
+                <img src="im/18.jpg" alt="">
+                <h3>
+                    Cajon
+                    <br>Model Name: LP Aspire LPA131
+                    <br>Price: $19
+                    <br>Material: Wood
+                    <br>Dimensions: 2.5" x 3"
+                    <br>Brand: Latin Percussion
+                </h3>
+            </div>
+            <div class="image" data-title="c Trumpet">
+                <img src="im/c Trumpet.jpeg" alt="">
+                <h3>
+                    c Trumpet
+                    <br>Model Name: Meinl Percussion HCAJ1NT
+                    <br>Price: $99
+                    <br>Material: Hardwood
+                    <br>Dimensions: 11.75" x 11.75" x 19.75"
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title="cornet">
+                <img src="im/cornet.jpg" alt="">
+                <h3>
+                    cornet
+                    <br>Model Name: Remo Mondo
+                    <br>Price:  $329
+                    <br>Material:  Acousticon shell
+                    <br>Dimensions: 14" head, 25" height
+                    <br>Brand: Remo
+                </h3>
+            </div>
+
+            <div class="image" data-title="Djembe">
+                <img src="im/Djembe.jpg" alt="">
+                <h3>
+                    Djembe
+                    <br>Model Name: LP Aspire
+                    <br>Price: $119
+                    <br>Material: Siam oak
+                    <br>Dimensions: 6.75" and 8" heads
+                    <br>Brand: Latin Percussion
+
+                </h3>
+            </div>
+            <div class="image" data-title=" Euphonium">
+                <img src="im/Euphonium.jpg" alt="">
+                <h3>
+                    Euphonium
+                    <br>Model Name: Toca Synergy
+                    <br>Price: $249
+                    <br>Material: Wood
+                    <br>Dimensions: 10" and 11" heads
+                    <br>Brand:Toca
+                </h3>
+            </div>
+
+             
+        </div>
+    </div>
+
+    <div class="container">
+          
+       <h2>Available for rent</h2>
+
+        <div class="image-container" id="image-container">
+            
+
+            <div class="image" data-title="Flugelhorn">
+                <img src="im/Flugelhorn.jpg" alt="">
+                <h3>
+                    Flugelhorn
+                    <br>Model Name: LP Cyclops
+                    <br>Price: $39
+                    <br>Material:  Plastic, nickel-plated steel jingles
+                    <br>Dimensions:  9"
+                    <br>Brand:Latin Percussion
+                </h3>
+            </div>
+            <div class="image" data-title="French Horn">
+                <img src="im/French Horn.jpg" alt="">
+                <h3>
+                    French Horn
+                    <br>Model Name: Remo Fiberskyn
+                    <br>Price: $89
+                    <br>Material: Fiberskyn head, Acousticon shell
+                    <br>Dimensions: 16"
+                    <br>Brand: Remo
+                </h3>
+            </div>
+            <div class="image" data-title="Glockenspiel">
+                <img src="im/Glockenspiel.webp" alt="">
+                <h3>
+                    Glockenspiel
+                    <br>Model Name: Meinl TABLA
+                    <br>Price: $399
+                    <br>Material: Wood and metal
+                    <br>Dimensions:  5.5" and 9" heads
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title="Marimba">
+                <img src="im/Marimba.jpg" alt="">
+                <h3>
+                    Marimba
+                    <br>Model Name: Pearl PTTD-0714
+                    <br>Price: $219
+                    <br>Material: Wood, goatskin heads
+                    <br>Dimensions: 7" x 14"
+                    <br>Brand:Pearl
+                </h3>
+            </div>
+            <div class="image" data-title="snare drum">
+                <img src="im/snare drum.jpg" alt="">
+                <h3>
+                    snare drum
+                    <br>Model Name: LP Udu Drum
+                    <br>Price: $159
+                    <br>Material: Clay
+                    <br>Dimensions: 12" height
+                    <br>Brand:Latin Percussion
+                </h3>
+            </div>
+            <div class="image" data-title="Studio 49 Alto">
+                <img src="im/Studio 49 Alto.jpg" alt="">
+                <h3>
+                    Studio 49 Alto
+                    <br>Model Name: Waltons Pro Bodhrán
+                    <br>Price:  $149
+                    <br>Material: Wood, goatskin head
+                    <br>Dimensions: 18"
+                    <br>Brand:Waltons
+                </h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+          
+        <h2>Available for second-hand purchase </h2>
+ 
+         <div class="image-container" id="image-container">
+            <div class="image" data-title="Timpani">
+                <img src="im/Timpani.png" alt="">
+                <h3>
+                    Timpani
+                    <br>Model Name: Meinl Percussion Kanjira
+                    <br>Price: $69
+                    <br>Material: Wood, goatskin head
+                    <br>Dimensions: 7"
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title="trombone">
+                <img src="im/trombone.jpeg" alt="">
+                <h3>
+                    trombone
+                    <br>Model Name: Meinl Pandeiro
+                    <br>Price: $89
+                    <br>Material: Wood, goatskin head
+                    <br>Dimensions: 10"
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title="Trumpet">
+                <img src="im/Trumpet.jpg" alt="">
+                <h3>
+                    Trumpet
+                    <br>Model Name: Meinl Headliner
+                    <br>Price: $249
+                    <br>Material: Rubberwood
+                    <br>Dimensions:  10" and 11" heads
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title=" Tuba">
+                <img src="im/Tuba.jpg" alt="">
+                <h3>
+                    Tuba
+                    <br>Model Name: Meinl HE-3000
+                    <br>Price: $129
+                    <br>Material: Aluminum
+                    <br>Dimensions: 8.5" head, 17.25" height
+                    <br>Brand:Meinl
+                </h3>
+            </div>
+            <div class="image" data-title="Vibraphone">
+                <img src="im/Vibraphone.jpeg" alt="">
+                <h3>
+                    Vibraphone
+                    <br>Model Name:  LP Aspire LPA1331
+                    <br>Price: $149
+                    <br>Material: Birch
+                    <br>Dimensions: 21" x 12" x 12"
+                    <br>Brand:Latin Percussion
+                </h3>
+            </div>
+            <div class="image" data-title=" Xylophone">
+                <img src="im/Xylophone.jpg" alt="">
+                <h3>
+                    Xylophone
+                    <br>Model Name: Toca DIDG-CTS
+                    <br>Price: $499
+                    <br>Material: Wood, goatskin heads
+                    <br>Dimensions: 14" head, 25" height
+                    <br>Brand: Toca
+                </h3>
+            </div>
+            
+            </div>
+        </div>
+    
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const searchBox = document.querySelector('#search-box');
+    const images = document.querySelectorAll('.container .image-container .image');
+    
+    searchBox.placeholder = 'Enter Instrument Name';
+
+    searchBox.oninput = () => {
+        const value = searchBox.value.toLowerCase();
+        images.forEach(image => {
+            const title = image.getAttribute('data-title').toLowerCase();
+            if (title.includes(value)) {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        });
+        if (searchBox.value === '') {
+            images.forEach(image => image.style.display = 'block');
+        }
+    };
+
+})
+
+    </script>
+    
+    
+</body>
+</html>
