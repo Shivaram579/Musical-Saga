@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="register-Shivaram.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <header>Registration Form</header>
+        <form id="registrationForm" class="form">
+            <div class="input-box">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter full Name" required> 
+            </div>
+            <div class="input-box">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter email address" required> 
+            </div>
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required>
+            </div>
+            <div class="input-box">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="Confirm password" required>
+            </div>
+            
+            <div class="column">
+                <div class="input-box">
+                    <label>Phone Number</label>
+                    <input type="number" placeholder="Enter Phone Number" required> 
+                </div>
+                <div class="input-box">
+                    <label>Birth Date</label>
+                    <input type="date" placeholder="Enter birth date" required> 
+                </div>
+            </div>
+            
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" checked>
+                        <label for="check-male">Male</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender">
+                        <label for="check-female">Female</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-other" name="gender">
+                        <label for="check-other">Others</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label>Age</label>
+                <input type="number" placeholder="Enter your age" required>
+            </div>
+
+            <div class="input-box address">
+                <label>Address</label>
+                <input type="text" placeholder="Enter Street address" required> 
+                <input type="text" placeholder="Enter Street address line 2" required> 
+                <div class="column">
+                    <div class="select-state">
+                        <select name="slct1" id="slct1" required>
+                            <option value="" hidden>--Select State--</option>
+                            <option value="telangana">Telangana</option>
+                            <option value="andhra pradesh">Andhra Pradesh</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="text" placeholder="Enter your region" required> 
+                <input type="number" placeholder="Enter postal code" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Get selected state
+            const selectedState = document.getElementById('slct1').value;
+            
+            // Store selected state in localStorage
+            localStorage.setItem('selectedState', selectedState);
+            
+            // Redirect to card page
+            window.location.href = 'card/card.html';
+        });
+    </script>
+</body>
+</html>
