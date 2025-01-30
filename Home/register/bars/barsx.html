@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bars.css">
+</head>
+<body>
+    <div>
+        <button class="hexagonal-button" onclick="redirectToPage('musical-instrument')">Musical Instruments Page</button>
+    </div>
+    <div>
+        <button class="div2" onclick="redirectToPage('singing')">Singing Contests</button>
+    </div>
+    <div>
+        <button class="div3" onclick="redirectToPage('tutors')">Home Tutors</button>
+    </div>
+    <div>
+        <button class="div4" onclick="redirectToPage('concert')">Music Concerts</button>
+    </div>
+    
+    <script>
+        function redirectToPage(pageName) {
+            const selectedDistrict = localStorage.getItem('selectedDistrict');
+            if (selectedDistrict) {
+                window.location.href = `${pageName}-${selectedDistrict}.html`;
+            } else {
+                console.error('Selected district information is missing.');
+                // Handle case where district selection is missing
+            }
+        }
+    </script>
+</body>
+</html>

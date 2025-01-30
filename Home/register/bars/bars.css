@@ -1,0 +1,111 @@
+/*.div1{
+    background-image: url("drum.jpeg");
+    background-size: ;
+    width: 100%;
+    height: 20%;
+    background-size: cover;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    border-radius: 12px;
+}*/
+.div2{
+    background-image: url("contt.jpg");
+    background-size: ;
+    width: 100%;
+    height: 25%;
+    background-size: cover;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.div3{
+    background-image: url("tutor1.jpg");
+    background-size:cover ;
+    width: 100%;
+    height: 25%;
+    background-size: cover;
+    color: rgb(41, 35, 35);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.div4{
+    background-image: url("comc.png");
+    background-size: ;
+    width: 100%;
+    height: 25%;
+    background-size: cover;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.div3{
+    background-image: url("tutor1.png");
+    background-size: ;
+    width: 100%;
+    height: 25%;
+    background-size: cover;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.div1{
+    background-image: url("drumss.jpeg");
+    text-decoration: none;
+    background-size: ;
+    width: 100%;
+    height: 25%;
+    background-size: cover;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: i;
+    padding-top: 40px;
+    padding-bottom: calc(-40px);
+    margin-top: 10px;
+    border-radius: 12px;
+}
+a{
+    text-decoration: none;
+}
